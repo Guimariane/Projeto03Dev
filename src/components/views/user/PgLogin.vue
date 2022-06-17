@@ -16,11 +16,16 @@
                         <Field name="email" type="type" placeholder="E-mail"/>
                         <br>
                         <Field name="senha" type="password" placeholder="Senha"/>
-                    </Form>
                         <br>
                         <div class="login">
                             <button type="submit" style="margin-right: 10px">Login</button>
                         </div>
+                        <p>Não está cadastrado?
+                            <span>
+                                <router-link to="/criar">Crie a sua conta</router-link>
+                            </span>
+                        </p>
+                    </Form>
                 </div>
             </div>
         </div>
@@ -28,14 +33,50 @@
 </template>
 
 <script>
-import { Form, Field } from 'vee-validate'
+import { Form, Field, defineRule } from 'vee-validate'
 export default {
     components:{
         Form,
         Field
-    }
+    },
 
+    data(){
+        const schema = {
+            email: "required",
+            senha: "required"
+        }
+          defineRule('required', value => {
+            if (!value || !value.length) {
+            return 'Campo obrigatório!';
+        }
+            return true;
+    });
+            
+            return{
+                schema
+            }
+    },
+
+    methods: {
+        logar(values) {
+            const users = JSON.parse(localStorage.getItem("usuarios")) || [];
+            console.log({users, values})
+        for(let i = 0; i < users.length; i++) {
+          if(users[i].email === values.email) {
+            if(users[i].senha === values.senha) {
+              this.$router.replace("/dashboard");
+              return
+              }  else {
+              alert("Usuário ou senha inválida!");
+              return }     
+            } else {
+              alert("Usuário ou senha inválida!");
+              return }
+        }
+        }
+        }       
 }
+
 </script>
 
 <style>
