@@ -1,7 +1,5 @@
 <template>
-  <div class="geral">
-    
-  </div>
+    <h1>Olá mundo!</h1>
 </template>
 
 <script>
