@@ -1,11 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import PgLogin from "/src/components/views/user/PgLogin.vue";
+import Login from '/src/components/views/user/PgLogin.vue';
+import Criar from '/src/components/views/user/CriarConta.vue';
 
 const routes = [{
-    path: '/login',
-    component: PgLogin
-}]
+        path: '/entrar',
+        component: Login
+    },
+    {
+        path: '/criar',
+        component: Criar
+    }
+]
 
 const router = createRouter({
     routes,
