@@ -10,14 +10,14 @@
           <th>Marca</th>
           <th>Modelo</th>
         </thead>
-        <tbody v-for="(painel, indice) in this.paineis" :key="indice">
+        <tbody v-for="(painel, indice) in this.paineis" :key="painel.apelido">
           <td>{{indice + 1}}</td>
           <td>{{painel.apelido}}</td>
           <td>{{painel.local}}</td>
           <td>{{painel.marca}}</td>
           <td>{{painel.modelo}}</td>
           <td>
-            <button type="submit" class="btn btn-primary" @click="editar(indice)">Editar</button>
+            <button type="submit" class="btn btn-primary" @click="editar(painel.apelido)">Editar</button>
           </td>
           <td>
             <button type="submit" class="delete-btn" @click="excluir(indice)">Excluir</button>
@@ -43,8 +43,8 @@ export default {
     }
   },
   methods: {
-    editar(indice){
-      this.$router.push(`/registropainel/${indice}`);
+    editar(apelido){
+      this.$router.push(`/registropainel/${apelido}`);
     },
 
     cadastrar(){

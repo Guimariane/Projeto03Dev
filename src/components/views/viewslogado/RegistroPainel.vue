@@ -8,7 +8,7 @@
         <div>
           <label for="">Apelido</label>
           <br>
-          <Field name="nome" v-model="painel.apelido"/>
+          <Field name="apelido" v-model="painel.apelido"/>
         </div>
         <br>
         <div>
@@ -60,9 +60,9 @@ export default {
   },
   methods: {
       registrar() { 
-        if(this.$route.params.indice) {
+        if(this.$route.params.apelido) {
           for(var i = 0; i < this.paineis; i++) {
-            if (this.paineis[i].indice == this.painel.indice) {
+            if (this.paineis[i].apelido == this.painel.apelido) {
               this.paineis[i] = this.painel
             }
           }
@@ -85,7 +85,7 @@ export default {
         this.paineis = localStorage.getItem("painel") ? JSON.parse(localStorage.getItem("painel")) : [];
         if (this.paineis !== null) {
           this.paineis.forEach(energia => {
-            if(energia.indice == this.$route.params.indice) {
+            if(energia.apelido == this.$route.params.apelido) {
               this.painel = energia
             }
           })
