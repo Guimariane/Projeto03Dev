@@ -28,6 +28,10 @@ const routes = [{
         component: Registro
     },
     {
+        path: '/registropainel/:apelido',
+        component: Registro
+    },
+    {
         path: '/geracaomensal',
         component: Mensal
     }
