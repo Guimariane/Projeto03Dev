@@ -1,45 +1,55 @@
 <template>
     <div>
-      <Form @submit="registrar">
-        <div>
-          <label for="">Unidade Geradora</label>
+      <Form @submit="cadastrar">
+        <div class="col-4">
+          <h6>Unidade Geradora</h6>
+            <Field as="select" name="painel" v-model="consumo.painel">
+              <option v-for="painel in this.paineis" :key="painel.apelido" value={{painel.apelido}}>{{painel.apelido}}</option>
+            </Field>
           <br>
-          <Select name="nome" v-model="painel.apelido"></Select>
-        </div>
-        <br>
-        <div>
-          <label for="">Mês/ Ano</label>
           <br>
-          <Field type="date"/>
-        </div>
-        <br>
-        <div>
-          <label for="">Marca</label>
+          <h5>Mês/ Ano:</h5>
+          <Field type="date" name="data"/>
           <br>
-          <Field name="marca" v-model="painel.marca"/>
-        </div>
-        <br>
-        <div>
-          <label for="">Modelo</label>
           <br>
-          <Field name="modelo" v-model="painel.modelo"/>
-        </div>
-        <br>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ativo" v-model="painel.ativo">
-          <label class="form-check-label" for="exampleCheck1">Ativo</label>
-        </div>
-        <br>
-        <div class="md-5">
-        <button type="submit" class="btn btn-primary">Salvar</button>
+          <h5>Total kw gerado</h5>
+          <Field type="number" name="totalgerado" v-model="consumo.totalgerado"/>
+          <br>
+          <br>
+          <br>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
         </div>
       </Form>
     </div>
 </template>
 
 <script>
+import { Form, Field } from 'vee-validate'
 export default {
-
+  components: {
+    Form,
+    Field
+  },
+  data(){
+    return{
+      painel: {},
+      paineis: [],
+      consumo: {},
+      consumos: [],
+    }},
+  methods: { 
+    cadastrar(){
+        const consumos = JSON.parse(localStorage.getItem("energia")) || [];
+        const newconsumo = [...consumos, this.consumo];
+        localStorage.setItem("energia", JSON.stringify(newconsumo));
+        alert("Consumo adicionado com sucesso");
+        // this.$router.replace("/dashboard");
+  }},
+  mounted() {
+    this.paineis = localStorage.getItem("painel") ? JSON.parse(localStorage.getItem("painel")) : [];
+    console.log(this.paineis)
+    this.consumos = localStorage.getItem("energia") ? JSON.parse(localStorage.getItem("energia")) : [];
+},
 }
 </script>
 
