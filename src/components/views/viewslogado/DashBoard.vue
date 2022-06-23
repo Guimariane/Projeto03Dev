@@ -14,6 +14,7 @@
     </div>
     <div class="card">
       <h3>Média de Energia</h3>
+      <h1>{{this.total}}</h1>
     </div>
   </div>
 </template>
@@ -22,10 +23,12 @@
 export default {
   components: {},
   data() {
+    
     return{
       paineis: [],
       habilitado: [],
-      desabilitado: []
+      desabilitado: [],
+      total: []
     }
   },
   methods: {
@@ -37,6 +40,8 @@ export default {
     console.log(this.paineis)
     this.habilitado = JSON.parse(localStorage.getItem("painel")).filter(energia => energia.ativo === true)
     this.desabilitado = JSON.parse(localStorage.getItem("painel")).filter(energia => energia.ativo === false)
+    this.energias = localStorage.getItem("energia") ? JSON.parse(localStorage.getItem("energia")) : [];
+    this.total = this.energias.map(energia => energia.totalgerado).reduce((a, b) => a + b, 0)
 },
 }
 </script>
