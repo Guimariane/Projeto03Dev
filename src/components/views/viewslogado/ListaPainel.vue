@@ -60,6 +60,7 @@ export default {
   mounted() {
     this.paineis = localStorage.getItem("painel") ? JSON.parse(localStorage.getItem("painel")) : [];
     console.log(this.paineis)
+
 },
 
 }
