@@ -3,17 +3,17 @@
       <Form @submit="cadastrar">
         <div class="col-4">
           <h6>Unidade Geradora</h6>
-            <Field as="select" name="painel" v-model="consumo.painel">
-              <option v-for="painel in this.paineis" :key="painel.apelido" value={{painel.apelido}}>{{painel.apelido}}</option>
-            </Field>
+            <Select as="select" name="painel" v-model="consumo.painel">
+              <option v-for="painel in this.paineis" :key="painel.apelido">{{painel.apelido}}</option>
+            </Select>
           <br>
           <br>
           <h5>Mês/ Ano:</h5>
-          <Field type="date" name="data"/>
+          <input type="date" name="data" v-model="consumo.data"/>
           <br>
           <br>
           <h5>Total kw gerado</h5>
-          <Field type="number" name="totalgerado" v-model="consumo.totalgerado"/>
+          <input type="number" name="totalgerado" v-model="consumo.totalgerado"/>
           <br>
           <br>
           <br>
@@ -24,11 +24,10 @@
 </template>
 
 <script>
-import { Form, Field } from 'vee-validate'
+import { Form } from 'vee-validate'
 export default {
   components: {
     Form,
-    Field
   },
   data(){
     return{
@@ -42,7 +41,7 @@ export default {
         const consumos = JSON.parse(localStorage.getItem("energia")) || [];
         const newconsumo = [...consumos, this.consumo];
         localStorage.setItem("energia", JSON.stringify(newconsumo));
-        alert("Consumo adicionado com sucesso");
+        alert("Consumo adicionado com sucesso", newconsumo);
         // this.$router.replace("/dashboard");
   }},
   mounted() {
