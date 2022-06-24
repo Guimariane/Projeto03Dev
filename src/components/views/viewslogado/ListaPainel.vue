@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <NavBar/>
+  <div class="lista">
     <h3>Lista de Unidades</h3>
-    <div>
+    <br>
+    <div class="tabela">
       <table>
         <thead>
           <th>ID</th>
@@ -33,8 +35,11 @@
 </template>
 
 <script>
+import NavBar from '/src/components/templates-comuns/NavBar.vue';
 export default {
-  components: {},
+  components: {
+    NavBar
+  },
   data(){
     return{
       painel: {
@@ -67,9 +72,15 @@ export default {
 </script>
 
 <style>
+.lista{
+  padding: 40px;
+}
+.tabela{
+  padding-right: 40px;
+}
 thead{
-  background-color: #F5F5F5;
-  border-radius: 10px;
+  background-color: #fff;
+  border-radius: 20px;
 }
 th{
   padding-left: 5px;
@@ -78,5 +89,8 @@ th{
 td{
   padding-left: 5px;
   padding-right: 20px;
+}
+button{
+  margin-left: 15px
 }
 </style>

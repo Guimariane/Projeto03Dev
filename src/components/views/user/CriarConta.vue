@@ -3,7 +3,7 @@
           <div>
         <div class="geral">
             <div class="figura">
-                <img src="@/assets/energiasolar.jpg">
+                <img class="figura" src="@/assets/energiasolar.jpg">
             </div>
             <div class="laddireito">
                 <div class="logo">
@@ -22,6 +22,7 @@
                         <br>
                         <Field name="confirmesenha" type="password" rules="confirmed:@senha" placeholder="Confirme a Senha"/>
                         <span class="text-danger" v-text="errors.confirmesenha" v-show="errors.confirmesenha"></span>
+                        <br>
                         <div class="login">
                             <button type="submit" style="margin-right: 10px">Criar Conta</button>
                         </div>
@@ -101,5 +102,37 @@ export default {
 </script>
 
 <style>
-
+.geral{
+    display: flex;
+    background-color: #FFEFD5;
+    padding-top: 10px
+}
+.figura{
+    width: 670px;
+    height: 640px;
+    padding-left: 85px;
+    padding-right: 20px;
+    background-color: #FFEFD5
+}
+.laddireito{
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    padding-top: 10px;
+    padding-left: 75px;
+    padding-right: 70px;
+    padding-bottom: 10px;
+    margin-left: 20px
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+form{
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
 </style>

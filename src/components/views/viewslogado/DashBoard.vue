@@ -1,18 +1,19 @@
 <template>
+  <NavBar/>
   <div class="card-estatisticas">
-    <div class="card">
-      <h3>Total de Unidades:</h3>
+    <div class="card-dashboard">
+      <h3>Total de Unidades</h3>
       <h1>{{this.paineis.length}}</h1>
     </div>
-    <div class="card">
+    <div class="card-dashboard">
       <h3>Unidades Ativas</h3>
       <h1>{{this.habilitado.length}}</h1>
     </div>
-    <div class="card">
+    <div class="card-dashboard">
       <h3>Unidades Inativas</h3>
       <h1>{{this.desabilitado.length}}</h1>
     </div>
-    <div class="card">
+    <div class="card-dashboard">
       <h3>Média de Energia</h3>
       <h1>{{this.total}}</h1>
     </div>
@@ -20,8 +21,11 @@
 </template>
 
 <script>
+import NavBar from '/src/components/templates-comuns/NavBar.vue';
 export default {
-  components: {},
+  components: {
+    NavBar
+  },
   data() {
     
     return{
@@ -58,8 +62,9 @@ h3{
     display: flex;
     align-items: center;
 }
-.card{
-    background-color: white;
+.card-dashboard{
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     align-items: center;
     text-align: center;
     width: 220px;

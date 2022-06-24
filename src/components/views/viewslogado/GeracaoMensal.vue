@@ -1,8 +1,9 @@
 <template>
+  <NavBar/>
     <div>
       <Form @submit="cadastrar">
         <div class="col-4">
-          <h6>Unidade Geradora</h6>
+          <h5>Unidade Geradora</h5>
             <Select as="select" name="painel" v-model="consumo.painel">
               <option v-for="painel in this.paineis" :key="painel.apelido">{{painel.apelido}}</option>
             </Select>
@@ -25,9 +26,11 @@
 
 <script>
 import { Form } from 'vee-validate'
+import NavBar from '/src/components/templates-comuns/NavBar.vue'
 export default {
   components: {
     Form,
+    NavBar
   },
   data(){
     return{
@@ -53,5 +56,8 @@ export default {
 </script>
 
 <style>
-
+Form{
+  padding: 40px;
+  background-color: #f5f5f5;
+}
 </style>

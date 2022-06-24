@@ -1,4 +1,5 @@
 <template>
+  <NavBar/>
   <div>
     <card class="card">
       <Form @submit="registrar">
@@ -44,10 +45,12 @@
 
 <script>
 import { Form, Field } from 'vee-validate';
+import NavBar from '/src/components/templates-comuns/NavBar.vue';
 export default {
   components: {
     Form,
-    Field
+    Field,
+    NavBar
   },
   data() {
 
