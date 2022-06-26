@@ -1,6 +1,6 @@
 <template>
   <div class="geral">
-    <NavBar/>
+    <NavBar title="Unidades"/>
     <SideBar/>
     <div>
       <card class="formcard">

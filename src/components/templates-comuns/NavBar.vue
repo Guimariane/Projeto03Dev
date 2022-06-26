@@ -1,14 +1,14 @@
 <template>
     <nav>
-        <h2>Teste</h2>
+        <h2 v-text="title"></h2>
     </nav>
 </template>
 
 <script>
 export default {
-    name: 'NavBar',
-
+    props: ['title']
 }
+
 </script>
 
 <style>

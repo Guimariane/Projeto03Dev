@@ -1,6 +1,6 @@
 <template>
   <div class="geral">
-    <NavBar/>
+    <NavBar title="Lançamento de geração mensal"/>
     <SideBar/>
       <div>
         <Form @submit="cadastrar">

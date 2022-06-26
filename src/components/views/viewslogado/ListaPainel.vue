@@ -1,6 +1,6 @@
 <template>
   <div class="geral">
-    <NavBar/>
+    <NavBar title='Unidades'/>
     <SideBar />
     <div class="lista">
       <h3>Lista de Unidades</h3>

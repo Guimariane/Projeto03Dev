@@ -1,6 +1,6 @@
 <template>
 <div class="geral">
-    <NavBar/>
+    <NavBar title='Dashboard'/>
     <SideBar/>
     <div class="card-estatisticas">
       <div class="card-dashboard">
@@ -17,7 +17,7 @@
       </div>
       <div class="card-dashboard">
         <h3>Média de Energia</h3>
-        <h1>{{this.media}}</h1>
+        <h1>{{this.media}} kw</h1>
       </div>
     </div>
     <div class="grafico">
@@ -37,8 +37,6 @@ export default {
   },
   data() {
 
-    
-    
     return{
       paineis: [],
       habilitado: [],
