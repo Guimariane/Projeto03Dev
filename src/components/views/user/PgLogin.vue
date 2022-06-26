@@ -1,6 +1,5 @@
 <template>
-    <div class="pglogin">
-        <div class="geral">
+        <div class="gerallogin">
             <div class="figura">
                 <img class="figura" src="@/assets/energiasolar.jpg">
             </div>
@@ -9,13 +8,15 @@
                     <img src="@/assets/SolarEnergy.png">
                 </div>
                 <br>
-                <div class="form">
+                <div class="formlogin">
                     <Form>
                         <h4>Seja bem-vindo!</h4>
                         <br>
                         <Field name="email" type="type" placeholder="E-mail"/>
                         <br>
+                        <br>
                         <Field name="senha" type="password" placeholder="Senha"/>
+                        <br>
                         <br>
                         <div class="login">
                             <button type="submit" style="margin-right: 10px">Login</button>
@@ -31,7 +32,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style>
-.geral{
+.gerallogin{
     display: flex;
     background-color: #FFEFD5;
     padding-top: 10px
@@ -109,7 +109,7 @@ export default {
     justify-content: center;
     padding-top: 25px;
 }
-form{
+.formlogin{
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-wrap: wrap;

@@ -1,42 +1,41 @@
 <template>
-    <div>
-          <div>
-        <div class="geral">
-            <div class="figura">
-                <img class="figura" src="@/assets/energiasolar.jpg">
+    <div class="geralcadastro">
+        <div class="figura">
+            <img class="figura" src="@/assets/energiasolar.jpg">
+        </div>
+        <div class="laddireito">
+            <div class="logo">
+                <img src="@/assets/SolarEnergy.png">
             </div>
-            <div class="laddireito">
-                <div class="logo">
-                    <img src="@/assets/SolarEnergy.png">
-                </div>
-                <br>
-                <div class="form">
-                    <Form @submit="registrar" :validation-schema="schema" v-slot="{errors}">
-                        <h4>Crie a sua conta</h4>
-                        <br>
-                        <Field name="email" type="type" placeholder="E-mail"/>
-                        <span class="text-danger" v-text="errors.email" v-show="errors.email"></span>
-                        <br>
-                        <Field name="senha" type="password" placeholder="Senha"/>
-                        <span class="text-danger" v-text="errors.senha" v-show="errors.senha"></span>
-                        <br>
-                        <Field name="confirmesenha" type="password" rules="confirmed:@senha" placeholder="Confirme a Senha"/>
-                        <span class="text-danger" v-text="errors.confirmesenha" v-show="errors.confirmesenha"></span>
-                        <br>
-                        <div class="login">
-                            <button type="submit" style="margin-right: 10px">Criar Conta</button>
-                        </div>
-                        <br>
-                        <div class="return">
-                            <p>Retorne à pagina principal:
-                                <router-link to="/entrar">Login</router-link>
-                            </p>
-                        </div>
-                    </Form>
-                </div>
+            <br>
+            <div class="formcadastro">
+                <Form @submit="registrar" :validation-schema="schema" v-slot="{errors}">
+                    <h4>Crie a sua conta</h4>
+                    <br>
+                    <Field name="email" type="type" placeholder="E-mail"/>
+                    <span class="text-danger" v-text="errors.email" v-show="errors.email"></span>
+                    <br>
+                    <br>
+                    <Field name="senha" type="password" placeholder="Senha"/>
+                    <span class="text-danger" v-text="errors.senha" v-show="errors.senha"></span>
+                    <br>
+                    <br>
+                    <Field name="confirmesenha" type="password" rules="confirmed:@senha" placeholder="Confirme a Senha"/>
+                    <span class="text-danger" v-text="errors.confirmesenha" v-show="errors.confirmesenha"></span>
+                    <br>
+                    <br>
+                    <div class="login">
+                        <button type="submit" style="margin-right: 10px">Criar Conta</button>
+                    </div>
+                    <br>
+                    <div class="return">
+                        <p>Retorne à pagina principal:
+                            <router-link to="/entrar">Login</router-link>
+                        </p>
+                    </div>
+                </Form>
             </div>
         </div>
-    </div>
     </div>
 </template>
 
@@ -102,7 +101,7 @@ export default {
 </script>
 
 <style>
-.geral{
+.geralcadastro{
     display: flex;
     background-color: #FFEFD5;
     padding-top: 10px
@@ -129,7 +128,7 @@ export default {
     justify-content: center;
     padding-top: 25px;
 }
-form{
+.formcadastro{
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-wrap: wrap;
