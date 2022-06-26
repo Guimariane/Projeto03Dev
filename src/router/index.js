@@ -6,7 +6,6 @@ import Dashboard from '/src/components/views/viewslogado/DashBoard.vue';
 import ListaPainel from '/src/components/views/viewslogado/ListaPainel.vue';
 import Registro from '/src/components/views/viewslogado/RegistroPainel.vue';
 import Mensal from '/src/components/views/viewslogado/GeracaoMensal.vue';
-import Navbar from '/src/components/templates-comuns/NavBar.vue';
 
 const routes = [{
         path: '/entrar',
@@ -36,10 +35,6 @@ const routes = [{
         path: '/geracaomensal',
         component: Mensal
     },
-    {
-        path: '/navbar',
-        component: Navbar
-    }
 ]
 
 const router = createRouter({
